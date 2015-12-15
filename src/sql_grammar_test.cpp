@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
             // TODO: indicate whether expect_false was set
             printf("\033[0;32m{      ok} (%.1fus)\033[0m %s\n", us, sql.c_str());
                 SelectStatement* stmt = (SelectStatement*) stmt_list->getStatement(0);
-                cout << "\033[0;31mtable \033[0m| "<< stmt->from_table->name << endl;
+                cout << "\033[0;31mtables \033[0m| "<< stmt->from_table->join->left->name << " and " << stmt->from_table->join->right->name << endl;
                 // cout << "where | "<< stmt->where_clause->expr->name  << " , " << stmt->where_clause->expr2->name<< endl;
 
         }
