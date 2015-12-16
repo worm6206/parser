@@ -1,0 +1,13 @@
+type: select
+options: null
+distinct: null
+columns: *
+from:
+db: null
+table: nation
+as: null
+where: null
+groupby: null
+having: null
+orderby: null
+limit: null
