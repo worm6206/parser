@@ -21,7 +21,12 @@ make build
 ```
 make test
 ````
-To run our `token`, run`make token`at directory`src`, and the executable will be at `bin`.
+To run our `token`, run `make token` at directory `src`, and the executable will be at `bin`.
+Example:
+```
+./token "SELECT * FROM orders;"
+```
+a txt file named `sample_query` will be generated
 
 ### Credit
 
