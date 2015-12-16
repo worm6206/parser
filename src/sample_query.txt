@@ -1,0 +1,17 @@
+type: select
+options: null
+distinct: null
+columns: B C 
+from:
+table: D
+db: null
+table: E
+as: null
+join: inner join
+on: 1
+on: 2
+where: null
+groupby: null
+having: null
+orderby: null
+limit: null
