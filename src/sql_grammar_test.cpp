@@ -1,12 +1,14 @@
 
 #include <stdio.h>
 #include <string>
+#include <cstring>
 #include <chrono>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <vector>
 #include "SQLParser.h"
+#include "sqlhelper.h"
 
 using namespace hsql;
 using namespace std;
@@ -37,6 +39,7 @@ int main(int argc, char *argv[]) {
 
     bool expect_false = false;
     bool use_file = false;
+    bool joining = false;
     std::string file_path = "";
     
     // Parse command line arguments
@@ -84,7 +87,25 @@ int main(int argc, char *argv[]) {
             // TODO: indicate whether expect_false was set
             printf("\033[0;32m{      ok} (%.1fus)\033[0m %s\n", us, sql.c_str());
                 SelectStatement* stmt = (SelectStatement*) stmt_list->getStatement(0);
-                cout << "\033[0;31mtables \033[0m| "<< stmt->from_table->join->left->name << " and " << stmt->from_table->join->right->name << endl;
+            //join detection
+                if(strstr(sql.c_str(), "JOIN") != NULL) {
+                    //cout<<"Join"<<endl;
+                    joining = true;
+                }else{
+                    // cout<<"Nojoin"<<endl;
+                    joining = false;
+                }
+            //print tokens
+                printSelectStatementInfo(stmt,1);
+                // cout << "\033[0;31mselect \033[0m| ";
+                // for (Expr* expr : *stmt->select_list) printExpression(expr, 0);
+                // cout << endl;
+                if (joining)
+                {
+                    cout << "\033[0;31mtables \033[0m| "<< stmt->from_table->join->left->name << " and " << stmt->from_table->join->right->name << endl;
+                }else{
+                    cout << "\033[0;31mtable  \033[0m| "<< stmt->from_table->name << endl;
+                }
                 // cout << "where | "<< stmt->where_clause->expr->name  << " , " << stmt->where_clause->expr2->name<< endl;
 
         }
