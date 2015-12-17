@@ -30,6 +30,12 @@ tests: $(LIB_SOURCES) $(TEST_SOURCES) sql_tests.cpp
 kevin: $(LIB_SOURCES) $(TEST_SOURCES) kevin.cpp
 	$(CC) $(CFLAGS) $(LIB_SOURCES) kevin.cpp -o $(BIN_DIR)/kevin
 
+all: config.c
+		@echo "Building the configuration file..."
+		gcc -Wall -lconfig -o config config.c
+
+run: config
+		./config && vim config.conf
 
 parser/bison_parser.cpp:
 	make -C parser/

@@ -239,7 +239,6 @@ int main(int argc, char **argv)
     setting = config_setting_add(inner_list, NULL, CONFIG_TYPE_STRING);
     config_setting_set_string(setting, "string");
   } else {
-    printf("TABLE LEFT");
     printf("ERROR: table name not recognized.\n");
   }
 
@@ -397,7 +396,6 @@ int main(int argc, char **argv)
     setting = config_setting_add(inner_list, NULL, CONFIG_TYPE_STRING);
     config_setting_set_string(setting, "string");
   } else {
-    printf("TABLE RIGHT\n");
     printf("ERROR: table name not recognized.\n");
   }
 
