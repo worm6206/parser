@@ -1,11 +1,11 @@
 type: select
 options: null
 distinct: null
-columns: B C 
+columns: * 
 from:
-table: D
+table: orders
 db: null
-table: E
+table: items
 as: null
 join: inner join
 on: 1

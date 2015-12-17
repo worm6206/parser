@@ -59,14 +59,14 @@ void printOperatorExpression(Expr* expr, uint num_indent) {
 
 void printExpression(Expr* expr, uint num_indent) {
   switch (expr->type) {
-    case kExprStar: cout<<"kExprStar"; inprint("*", num_indent); break;
-    case kExprColumnRef: cout<<"kExprColumnRef"; inprint(expr->name, num_indent); break;
+    case kExprStar: /*cout<<"kExprStar";*/ inprint("*", num_indent); break;
+    case kExprColumnRef: /*cout<<"kExprColumnRef";*/ inprint(expr->name, num_indent); break;
     // case kExprTableColumnRef: inprint(expr->table, expr->name, num_indent); break;
-    case kExprLiteralFloat:cout<<"kExprLiteralFloat";  inprint(expr->fval, num_indent); break;
-    case kExprLiteralInt:cout<<"kExprLiteralInt";  inprint(expr->ival, num_indent); break;
-    case kExprLiteralString:cout<<"kExprLiteralString";  inprint(expr->name, num_indent); break;
-    case kExprFunctionRef:cout<<"kExprFunctionRef";  inprint(expr->name, num_indent); inprint(expr->expr->name, num_indent+1); break;
-    case kExprOperator:cout<<"kExprOperator";  printOperatorExpression(expr, num_indent); break;
+    case kExprLiteralFloat:/*cout<<"kExprLiteralFloat";*/  inprint(expr->fval, num_indent); break;
+    case kExprLiteralInt:/*cout<<"kExprLiteralInt";*/  inprint(expr->ival, num_indent); break;
+    case kExprLiteralString:/*cout<<"kExprLiteralString";*/  inprint(expr->name, num_indent); break;
+    case kExprFunctionRef:/*cout<<"kExprFunctionRef";*/  inprint(expr->name, num_indent); inprint(expr->expr->name, num_indent+1); break;
+    case kExprOperator:/*cout<<"kExprOperator"; */ printOperatorExpression(expr, num_indent); break;
     default: fprintf(stderr, "Unrecognized expression type %d\n", expr->type); return;
   }
   if (expr->alias != NULL) {
