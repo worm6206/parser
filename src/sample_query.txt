@@ -1,15 +1,15 @@
 type: select
 options: null
 distinct: null
-columns: *
-from: 
-table: order
+columns: * 
+from:
+table: region
 db: null
 table: nation
 as: null
 join: inner join
-on: col_1
-on: col_2
+on: 1
+on: 2
 where: null
 groupby: null
 having: null

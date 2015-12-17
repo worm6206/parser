@@ -216,9 +216,9 @@ int main(int argc, char *argv[]) {
         printf("\033[0;32m{      ok} \033[0mAll %lu grammar tests completed successfully!\n", queries.size());
     } else {
         fprintf(stderr, "\033[0;31m{  failed} \033[0mSome grammar tests failed! %d out of %lu tests failed!\n", num_failed, queries.size());
-            return 0;
+            // return 0;
     }
     File1.PrintAll();
-    system("open sample_query.txt");
+    // system("open sample_query.txt");
 	return 0;
 }

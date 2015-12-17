@@ -34,7 +34,7 @@ all: config.c
 		gcc -Wall -lconfig -o config config.c
 
 run: config
-		./bin/token "SELECT * FROM orders JOIN items ON orders.itemID = items.ID;" && ./config && vim config.conf
+		../bin/token "SELECT * FROM region JOIN nation ON region.itemID = nation.ID;" && ./config && vim config.conf
 
 parser/bison_parser.cpp:
 	make -C parser/
