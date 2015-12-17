@@ -30,4 +30,4 @@ a txt file named `sample_query` will be generated
 
 ### Credit
 
-We write code base on the original, we only own what we modified.
+We wrote code based on the original, we only own what we've modified.
