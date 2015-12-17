@@ -1,7 +1,6 @@
 C++ SQL Parser for Hyrise Modified
 ==================================
 
-<<<<<<< HEAD
 This is a C++ parser for Hyrise. The parser has been modified from [Original C++ Parser]https://github.com/hyrise/sql-parser to generate a JSON-like formatted text file which tokenizes an abstract syntax tree which resulted from an input SQL query.
 
 This work is compatibile with OSX and Linux.
