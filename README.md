@@ -18,8 +18,9 @@ This is a C++ parser for Hyrise. We modify it, want it to generate a txt file th
 * [flex](http://flex.sourceforge.net/) (tested with v2.5.5)
 * [libconfig](https://github.com/hyperrealm/libconfig/tree/master/lib) (can install with `brew install libconfig`)
 
-run following code under folder `src`
+
 ```
+cd src
 ./example.sh
 ```
 
