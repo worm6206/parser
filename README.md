@@ -14,39 +14,15 @@ This is a C++ parser for Hyrise. We modify it, want it to generate a txt file th
 ### General Usage
 
 **Prerequisites:**
-* [bison](https://www.gnu.org/software/bison/) (tested with v3.0.4)
+* [bison](https://www.gnu.org/software/bison/) (tested with v3.0.4) (`brew` doesn't install bison properly. Please install manually)
 * [flex](http://flex.sourceforge.net/) (tested with v2.5.5)
 * [libconfig](https://github.com/hyperrealm/libconfig/tree/master/lib) (can install with `brew install libconfig`)
 
-
-This work functions as the normal C++ parser for Hyrise does. However, the additional functionality is detailed below.
-
-In order to run the frontend which accepts a SQL query, use the following commands to build the work:
+run following code under folder `src`
 ```
-make build
-````
-```
-make test
-````
-
-To run the `token`, run `make token` at directory `src`, and the executable will be at `bin`.
-Example:
-```
-./token "SELECT * FROM orders;"
-```
-a text file named `sample_query` will be generated.
-
-This code tokenizes for simple, select queries which scan a table for specific columns or the table as a whole, or 2-way joins.
-
-In order to run the configuration file generater, at the directory `src,` run the following commands: 
-```
-make all
-```
-```
-make run
+./example.sh
 ```
 
-The `make run` will open up the configuration file that was generated in the vim text editor.
 ### Credit
 
 Code is based on the C++ Hyrise parser.
