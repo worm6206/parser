@@ -1,7 +1,7 @@
 C++ SQL Parser for Hyrise Modified
 ==================================
 
-This is a c++ parser for Hyrise. We modify it, want it to generate a txt file that tokenizes the input query. This runs on OSX and Linux.
+This is a C++ parser for Hyrise. We modify it, want it to generate a txt file that tokenizes the input query. This runs on OSX and Linux.
 
 ### Links
 
