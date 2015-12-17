@@ -17,7 +17,6 @@ build: clean
 	cp $(LIB_SOURCES) $(BUILD_DIR)
 	cp $(LIB_HEADERS) $(BUILD_DIR)
 
-
 grammar_test: $(LIB_SOURCES) sql_grammar_test.cpp
 	$(CC) $(CFLAGS) $(LIB_SOURCES) sql_grammar_test.cpp -o $(BIN_DIR)/grammar_test
 
@@ -35,11 +34,10 @@ all: config.c
 		gcc -Wall -lconfig -o config config.c
 
 run: config
-		./config && vim config.conf
+		./bin/token "SELECT * FROM orders JOIN items ON orders.itemID = items.ID;" && ./config && vim config.conf
 
 parser/bison_parser.cpp:
 	make -C parser/
-
 
 clean:
 	rm -f *.o *~ $(BIN_DIR)/analysis $(TESTS_BIN) $(BIN_DIR)/grammar_test $(BIN_DIR)/tests $(BIN_DIR)/token
